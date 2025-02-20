@@ -1,0 +1,31 @@
+import pygame
+import sys
+
+pygame.init()
+
+screen = pygame.display.set_mode((1600, 800))
+r = pygame.Rect(50, 50, 100, 200)
+pygame.display.set_caption("Python Rougelike")
+icon = pygame.image.load("img/icon.png")
+pygame.display.set_icon(icon)
+
+backgraund = pygame.image.load("img/backgr.jpg")
+
+myfont = pygame.font.Font('fonts/DeliciousHandrawn-Regular.ttf', 40)
+main_name = myfont.render('Metapixel', True, 'White')
+play = myfont.render('PLAY', True, 'White')
+settings = myfont.render('SETTINGS', True, 'White')
+quit = myfont.render('QUIT', True, 'White')
+myfont.get_linesize
+while True:
+    screen.blit(backgraund, (0, 0))
+    screen.blit(main_name, (125, 100))
+    screen.blit(play, (125, 175))
+    screen.blit(settings, (125, 250))
+    screen.blit(quit, (125, 325))
+    
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            pygame.quit()
+            sys.exit()
+    pygame.display.flip()
